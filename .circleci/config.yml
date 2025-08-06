@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  hello_world:
+    docker:
+      - image: circleci/python:3.8  # Choose an image, you can also use other images (e.g., node, ubuntu)
+    steps:
+      - checkout  # This will check out your code from GitHub
+      - run:
+          name: Print Hello CircleCI
+          command: echo "Hello, CircleCI!"
+
+workflows:
+  version: 2
+  hello_workflow:
+    jobs:
+      - hello_world  # Running the "hello_world" job
