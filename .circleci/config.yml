@@ -7,9 +7,9 @@ jobs:
   deploy:
     docker:
       - image: amazon/aws-cli:2.15.0
-    steps:
+    environment:
+      AWS_REGION: us-east-1  
       - checkout
-
       - aws-ecs/update-service:
           family: "my-taskkk"
           cluster-name: "myyy-testtt-cluster"
@@ -21,3 +21,5 @@ workflows:
   deploy_workflow:
     jobs:
       - deploy
+
+
