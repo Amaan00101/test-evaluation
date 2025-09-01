@@ -17,8 +17,7 @@ jobs:
           cluster-name: "myyy-testtt-cluster"
           service-name: "my-taskkk-service-u94wc574"
           container-image-name-updates: |
-            container-name=662012768045.dkr.ecr.us-east-1.amazonaws.com/my-ns/repooo:latest
-
+            container=app,image=662012768045.dkr.ecr.us-east-1.amazonaws.com/my-ns/repooo:latest
 workflows:
   deploy_workflow:
     jobs:
