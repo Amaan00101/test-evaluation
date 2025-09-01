@@ -1,16 +1,7 @@
-version: 2.1
+# Update ECS service with new image
 
-jobs:
-  say-hello:
-    docker:
-      - image: cimg/base:current
-    steps:
-      - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
+- aws-ecs/deploy-service-update:
+    family: "my-taskkk"                  # ECS Task Definition family name
+    cluster-name: "myyy-testtt-cluster"      # ECS Cluster name
+    service-name: "my-taskkk-service-u94wc574"         # ECS Service name
+    container-image-name-updates: "662012768045.dkr.ecr.us-east-1.amazonaws.com/my-ns/repooo:latest"
