@@ -5,7 +5,8 @@ orbs:
 
 jobs:
   deploy:
-    executor: aws-ecs/default
+    docker:
+      - image: amazon/aws-cli:2.15.0
     steps:
       - checkout
 
